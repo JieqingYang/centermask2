@@ -28,6 +28,13 @@ from detectron2.modeling import GeneralizedRCNNWithTTA
 from detectron2.checkpoint import DetectionCheckpointer
 from centermask.config import get_cfg
 
+register_coco_instances('live_cell', {}, 
+                        '/kaggle/working/centermask2/datasets/coco/annotations/instances_train2017.json', 
+                       '/kaggle/working/centermask2/datasets/coco/train2017')
+register_coco_instances('live_cell', {}, 
+                        '/kaggle/working/centermask2/datasets/coco/annotations/instances_val2017.json', 
+                       '/kaggle/working/centermask2/datasets/coco/val2017')
+
 
 class Trainer(DefaultTrainer):
     """
